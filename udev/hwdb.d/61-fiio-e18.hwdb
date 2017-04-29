@@ -1,0 +1,5 @@
+evdev:input:b0003v1852p50D2*
+ KEYBOARD_KEY_c00cd=playpause
+ KEYBOARD_KEY_c00b5=nextsong
+ KEYBOARD_KEY_c00b6=previoussong
+
