@@ -1,0 +1,9 @@
+[Unit]
+Description=Enable proper suspend via SABI
+
+[Service]
+Type=oneshot
+ExecStart=/etc/systemd/scripts/samsung-sleep-tweak.sh
+
+[Install]
+WantedBy=default.target
