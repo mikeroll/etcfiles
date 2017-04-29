@@ -1,0 +1,13 @@
+[Unit]
+Description=Set vconsole keyboard repeat rate
+
+[Service]
+Type=onshot
+RemainAfterExit=yes
+StandardInput=tty
+StandardOutput=/dev/null
+ExecStart=/usr/bin/kbdrate -d 206 -r 55 
+
+[Install]
+WantedBy=multi-user.target
+
