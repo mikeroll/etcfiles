@@ -2,7 +2,7 @@
 Description=Set vconsole keyboard repeat rate
 
 [Service]
-Type=onshot
+Type=oneshot
 RemainAfterExit=yes
 StandardInput=tty
 StandardOutput=/dev/null
