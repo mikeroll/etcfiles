@@ -1,0 +1,16 @@
+#
+# Global rules
+#
+
+# Wifi powersave
+ACTION=="add", SUBSYSTEM=="net", KERNEL=="wlan*", RUN+="/usr/bin/iw dev $name set power_save on"
+
+# Turn off ethernet
+ACTION=="add", SUBSYSTEM=="net", KERNEL=="eth*", RUN+="/usr/bin/ip link set dev $name down"
+
+# Disable Wake on LAN
+ACTION=="add", SUBSYSTEM=="net", KERNEL=="eth*", RUN+="/usr/bin/ethtool -s $name wol d"
+
+# Enable runtime PM for all PCI devices
+ACTION=="add", SUBSYSTEM=="pci", ATTR{power/control}="auto"
+
