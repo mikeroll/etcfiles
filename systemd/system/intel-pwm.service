@@ -1,0 +1,9 @@
+[Unit]
+Description=Intel LED backlight frequency (600 Hz)
+
+[Service]
+Type=oneshot
+ExecStart=/usr/bin/intel_reg write 0xC8254 0x065c065c
+
+[Install]
+WantedBy=multi-user.target
