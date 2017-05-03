@@ -1,0 +1,29 @@
+# Lists packages making use of the corresponding etcfiles
+
+zsh/zshenv
+    zsh
+
+vconsole.conf
+    terminus-font
+
+udev/rules.d/70-powersave.rules
+    ethtool
+    iw
+
+tmpfiles.d/levels.conf
+    acpi_call-dkms
+
+systemd/system/intel-pwm.service
+    intel-gpu-tools
+
+conf.d/wireless-regdom
+    crda
+
+X11/xorg.conf.d/10-keyboard.conf
+    xorg-server
+
+mkinitcpio.conf
+    acpi_call-dkms
+    lzop
+
+
