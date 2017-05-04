@@ -22,6 +22,10 @@ conf.d/wireless-regdom
 X11/xorg.conf.d/10-keyboard.conf
     xorg-server
 
+X11/xorg-conf.d/11-touchpad.conf
+    xorg-server
+    xf86-input-libinput
+
 mkinitcpio.conf
     acpi_call-dkms
     lzop
