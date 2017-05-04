@@ -5,7 +5,7 @@ Description=Set vconsole keyboard repeat rate
 Type=oneshot
 RemainAfterExit=yes
 StandardInput=tty
-StandardOutput=/dev/null
+StandardOutput=null
 ExecStart=/usr/bin/kbdrate -d 206 -r 55 
 
 [Install]
