@@ -1,9 +1,10 @@
 [Unit]
-Description=Intel LED backlight frequency (600 Hz)
+Description=Intel LED backlight frequency (1950 Hz)
+After=suspend.target hibernate.target hybrid-sleep.target
 
 [Service]
 Type=oneshot
-ExecStart=/usr/bin/intel_reg write 0xC8254 0x065c065c
+ExecStart=/usr/bin/intel_reg write 0xC8254 0x01f501f5
 
 [Install]
-WantedBy=multi-user.target
+WantedBy=multi-user.target sleep.target

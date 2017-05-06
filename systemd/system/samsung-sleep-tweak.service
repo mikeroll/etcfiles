@@ -1,9 +1,10 @@
 [Unit]
 Description=Enable proper suspend via SABI
+After=suspend.target hibernate.target hybrid-sleep.target
 
 [Service]
 Type=oneshot
 ExecStart=/etc/systemd/scripts/samsung-sleep-tweak.sh
 
 [Install]
-WantedBy=default.target
+WantedBy=default.target sleep.target
