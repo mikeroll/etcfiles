@@ -5,8 +5,15 @@
 # Wifi powersave
 ACTION=="add", SUBSYSTEM=="net", KERNEL=="wlan*", RUN+="/usr/bin/iw dev $name set power_save on"
 
+# Turn off bluetooth
+SUBSYSTEM="rfkill", ATTR{type}=="bluetooth", ATTR{state}="0"
+
 # Turn off ethernet
 ACTION=="add", SUBSYSTEM=="net", KERNEL=="eth*", RUN+="/usr/bin/ip link set dev $name down"
+
+# Autosuspend for webcam and card reader
+ACTION=="add", SUBSYSTEM=="usb", TEST=="power/control", ATTR{idVendor}=="2232", ATTR{idProduct}=="1045", ATTR{power/control}="auto"
+ACTION=="add", SUBSYSTEM=="usb", TEST=="power/control", ATTR{idVendor}=="0bda", ATTR{idProduct}=="0129", ATTR{power/control}="auto"
 
 # Disable Wake on LAN
 ACTION=="add", SUBSYSTEM=="net", KERNEL=="eth*", RUN+="/usr/bin/ethtool -s $name wol d"
